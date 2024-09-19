@@ -1,41 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Settings</h1>
-    <div>All settings</div>
-    <div>Published</div>
-    <div>BTC</div>
-    <div>USDT</div>
-    <div>TON</div>
-    <table>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="assets/reset.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <div class="header">
+        <h1 class="title">Settings</h1>
+        <nav>
+          <ul class="nav-tabs">
+            <li class="tab main-tab tab-active">
+              <a>
+                All settings
+              </a>
+            </li>
+            <li class="tab main-tab">
+              <a>Published</a>
+            </li>
+            <li class="tab crypto-tab">
+              <a>BTC</a>
+            </li>
+            <li class="tab crypto-tab">
+              <a>USDT</a>
+            </li>
+            <li class="tab crypto-tab">
+              <a>TON</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <table class="settings-table">
         <thead>
-            <tr>
-                <th>Setting name</th>
-                <th>Status</th>
-            </tr>
+          <tr>
+            <th><a href="https://" class="button-link">Set-creator-logic</a></th>
+            <th>Status</th>
+            <th></th>
+          </tr>
         </thead>
         <tbody>
-            <tr>
-                <td><a href="#">Content</a></td>
-                <td>Draft</td>
-                <td><span class="delete-icon">🗑️</span></td>
-            </tr>
-            <tr>
-                <td><a href="#">Content</a></td>
-                <td>Active</td>
-                <td><span class="delete-icon">🗑️</span></td>
-            </tr>
-            <tr>
-                <td><a href="#">Content</a></td>
-                <td>Active</td>
-                <td><span class="delete-icon">🗑️</span></td>
-            </tr>
+          <tr>
+            <td><a href="https://" class="button-link">Content</a></td>
+            <td><span class="status draft">Draft</span></td>
+            <td><button class="delete-btn"><img src="icon/Delete.svg" alt="Delete" type="image/svg+xml"></button></td>
+          </tr>
+          <tr>
+            <td><a href="https://" class="button-link">Content</a></td>
+            <td><span class="status active">Active</span></td>
+            <td><button class="delete-btn"><img src="icon/Delete.svg" alt="Delete" type="image/svg+xml"></button></td>
+          </tr>
+          <tr>
+            <td><a href="https://" class="button-link">Content</a></td>
+            <td><span class="status draft">Draft</span></td>
+            <td><button class="delete-btn"><img src="icon/Delete.svg" alt="Delete" type="image/svg+xml"></button></td>
+          </tr>
         </tbody>
-    </table>
-</body>
+      </table>
+    </div>
+  </body>
 </html>
