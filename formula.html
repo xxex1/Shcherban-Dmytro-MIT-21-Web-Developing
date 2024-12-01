@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/reset.css">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <title>Formula</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="header-nav">
+                <ul class="header-nav-ul">
+                    <li class="header-nav-li">
+                        <a href="/index.html" class="header-nav-link body-lg">settings</a>
+                    </li>
+                    <li class="header-nav-li">
+                        <a href="/setting.html" class="header-nav-link body-lg">
+                            setting-name
+                        </a>
+                    </li>
+                    <li class="header-nav-li">
+                        <a href="#" class="header-nav-link body-lg">
+                            formula-name
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button class="btn-secondary btn" aria-controls="discard">
+                    Discard
+                </button>
+                <button class="btn-primary btn disabled" aria-controls="save">
+                    Save
+                </button>
+            </div>
+        </header>
+        <div class="formula-title-field input-field">
+            <span class="input-label body-lg">
+                Title
+            </span>
+            <input type="text" class="input body-md" placeholder="formula-name">
+        </div>
+        <div class="formula-main">
+            <div class="formula-settings formula-column">
+                <div class="formula-settings-card">
+                    <div class="formula-heading">
+                        <h2 class="heading-lg">
+                            Formula settings
+                        </h2>
+                        <span class="formula-heading-icon">
+                            <img src="./assets/icon-question.svg" alt="question">
+                        </span>
+                    </div>
+                    <div class="input-field">
+                        <span class="input-label body-lg">
+                            Formula
+                        </span>
+                        <input type="text" class="input body-md" placeholder="X * Y">
+                        <p class="input-description body-md">
+                            X - cryptocurrency price, Y - product price
+                        </p>
+                    </div>
+                    <div class="input-field">
+                        <span class="input-label body-lg">
+                            Frequency
+                        </span>
+                        <input type="text" class="input body-md" placeholder="1000">
+                        <p class="input-description body-md">
+                            Cryptocurrency price update frequency. In milliseconds (like 1000ms == 1s)
+                        </p>
+                    </div>
+                    <div class="search-card" aria-controls="search-crypto">
+                        <div class="input-field input-field-search">
+                            <img class="input-field-search-icon" src="./assets/icon-search.svg" alt="search-icon">
+                            <input type="text" class="input body-md search-input" placeholder="Search">
+                            <p class="input-description search-input-description body-md">
+                                Select crypto from the list or search the one you need
+                            </p>
+                        </div>
+                        <div class="search-results">
+                            <div class="search-result">
+                                <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                    class="search-result-icon">
+                                <span class="search-result-name body-md-b">
+                                    Bitcoin
+                                </span>
+                            </div>
+                            <div class="search-result">
+                                <img src="./assets/image-placeholder.jpg" alt="eth" class="search-result-icon">
+                                <span class="search-result-name body-md-b">
+                                    Ethereum
+                                </span>
+                            </div>
+                            <div class="search-result">
+                                <img src="./assets/image-placeholder.jpg" alt="xrp" class="search-result-icon">
+                                <span class="search-result-name body-md-b">
+                                    Ripple
+                                </span>
+                            </div>
+                            <div class="search-result">
+                                <img src="./assets/image-placeholder.jpg" alt="ltc" class="search-result-icon">
+                                <span class="search-result-name body-md-b">
+                                    Litecoin
+                                </span>
+                            </div>
+                        </div>
+                        <button class="search-btn-save btn btn-primary">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="formula-collections formula-column">
+                <div class="formula-settings-card">
+                    <div class="formula-heading">
+                        <h2 class="heading-lg">
+                            Add collections
+                        </h2>
+                        <span class="formula-heading-icon formula-heading-icon-arrow">
+                            <img src="./assets/icon-arrow-top.svg" alt="arrow-top">
+                        </span>
+                    </div>
+                    <div class="search-card" aria-controls="search-collections">
+                        <div class="input-field input-field-search">
+                            <img class="input-field-search-icon" src="./assets/icon-search.svg" alt="search-icon">
+                            <input type="text" class="input body-md search-input" placeholder="Search">
+                        </div>
+                        <div class="selected-collections-input-field custom-checkbox-field">
+                            <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                id="selected-collections-input" checked>
+                            <label class="custom-checkbox-label" for="selected-collections-input">
+                                <div class="custom-checkbox">
+                                    <img src="./assets/icon-minus.svg" alt="minus-icon"
+                                        class="custom-checkbox-checkmark">
+                                </div>
+                                <span class="custom-checkbox-label-title body-md-b">
+                                    2 selected
+                                </span>
+                            </label>
+                        </div>
+                        <div class="search-results">
+                            <div class="search-result custom-checkbox-field">
+                                <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                    id="found-collection-1" checked>
+                                <label class="custom-checkbox-label" for="found-collection-1">
+                                    <div class="custom-checkbox">
+                                        <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
+                                            class="custom-checkbox-checkmark">
+                                    </div>
+                                    <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                        class="custom-checkbox-label-image">
+                                    <span class="custom-checkbox-label-title body-md-b">
+                                        Collection 1
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="search-result custom-checkbox-field">
+                                <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                    id="found-collection-2">
+                                <label class="custom-checkbox-label" for="found-collection-2">
+                                    <div class="custom-checkbox">
+                                        <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
+                                            class="custom-checkbox-checkmark">
+                                    </div>
+                                    <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                        class="custom-checkbox-label-image">
+                                    <span class="custom-checkbox-label-title body-md-b">
+                                        Collection 2
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="search-result custom-checkbox-field">
+                                <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                    id="found-collection-3" checked>
+                                <label class="custom-checkbox-label" for="found-collection-3">
+                                    <div class="custom-checkbox">
+                                        <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
+                                            class="custom-checkbox-checkmark">
+                                    </div>
+                                    <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                        class="custom-checkbox-label-image">
+                                    <span class="custom-checkbox-label-title body-md-b">
+                                        Collection 3
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formula-settings-card-controls">
+                        <button class="search-btn-cancel btn btn-secondary" aria-controls="cancel-selected-collections">
+                            Cancel
+                        </button>
+                        <button class="search-btn-save btn btn-primary" aria-controls="save-selected-collections">
+                            Save
+                        </button>
+                    </div>
+                </div>
+                <div class="formula-settings-card">
+                    <div class="formula-heading">
+                        <h2 class="heading-lg">
+                            Add products
+                        </h2>
+                        <span class="formula-heading-icon formula-heading-icon-arrow">
+                            <img src="./assets/icon-arrow-top.svg" alt="arrow-top">
+                        </span>
+                    </div>
+                    <div class="search-card" aria-controls="search-collections">
+                        <div class="input-field input-field-search">
+                            <img class="input-field-search-icon" src="./assets/icon-search.svg" alt="search-icon">
+                            <input type="text" class="input body-md search-input" placeholder="Search">
+                        </div>
+                        <div class="selected-collections-input-field custom-checkbox-field hidden">
+                            <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                id="selected-collections-input" checked>
+                            <label class="custom-checkbox-label" for="selected-collections-input">
+                                <div class="custom-checkbox">
+                                    <img src="./assets/icon-minus.svg" alt="minus-icon"
+                                        class="custom-checkbox-checkmark">
+                                </div>
+                                <span class="custom-checkbox-label-title body-md-b">
+                                    2 selected
+                                </span>
+                            </label>
+                        </div>
+                        <div class="search-results">
+                            <div class="search-result search-result-product-wrapper">
+                                <div class="search-result-product custom-checkbox-field">
+                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                        id="found-product-1" checked>
+                                    <label class="custom-checkbox-label" for="found-product-1">
+                                        <div class="custom-checkbox">
+                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
+                                                class="custom-checkbox-checkmark">
+                                        </div>
+                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                            class="custom-checkbox-label-image">
+                                        <span class="custom-checkbox-label-title body-md-b">
+                                            Product 1
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="search-result-variant custom-checkbox-field">
+                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                        id="found-variant-1" checked>
+                                    <label class="custom-checkbox-label" for="found-variant-1">
+                                        <div class="custom-checkbox">
+                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
+                                                class="custom-checkbox-checkmark">
+                                        </div>
+                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                            class="custom-checkbox-label-image">
+                                        <span class="custom-checkbox-label-title body-md-b">
+                                            Variant 1
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="search-result-variant custom-checkbox-field">
+                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                        id="found-variant-2" checked>
+                                    <label class="custom-checkbox-label" for="found-variant-2">
+                                        <div class="custom-checkbox">
+                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
+                                                class="custom-checkbox-checkmark">
+                                        </div>
+                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                            class="custom-checkbox-label-image">
+                                        <span class="custom-checkbox-label-title body-md-b">
+                                            Variant 2
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="search-result-variant custom-checkbox-field">
+                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                        id="found-variant-3" checked>
+                                    <label class="custom-checkbox-label" for="found-variant-3">
+                                        <div class="custom-checkbox">
+                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
+                                                class="custom-checkbox-checkmark">
+                                        </div>
+                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                            class="custom-checkbox-label-image">
+                                        <span class="custom-checkbox-label-title body-md-b">
+                                            Variant 3
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="search-result search-result-product-wrapper">
+                                <div class="search-result-product custom-checkbox-field">
+                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                        id="found-product-2" checked>
+                                    <label class="custom-checkbox-label" for="found-product-2">
+                                        <div class="custom-checkbox">
+                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
+                                                class="custom-checkbox-checkmark">
+                                        </div>
+                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                            class="custom-checkbox-label-image">
+                                        <span class="custom-checkbox-label-title body-md-b">
+                                            Product 2
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="search-result-variant custom-checkbox-field">
+                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                        id="found-variant-11" checked>
+                                    <label class="custom-checkbox-label" for="found-variant-11">
+                                        <div class="custom-checkbox">
+                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
+                                                class="custom-checkbox-checkmark">
+                                        </div>
+                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                            class="custom-checkbox-label-image">
+                                        <span class="custom-checkbox-label-title body-md-b">
+                                            Variant 1
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="search-result-variant custom-checkbox-field">
+                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                        id="found-variant-22" checked>
+                                    <label class="custom-checkbox-label" for="found-variant-22">
+                                        <div class="custom-checkbox">
+                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
+                                                class="custom-checkbox-checkmark">
+                                        </div>
+                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                            class="custom-checkbox-label-image">
+                                        <span class="custom-checkbox-label-title body-md-b">
+                                            Variant 2
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="search-result-variant custom-checkbox-field">
+                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
+                                        id="found-variant-33" checked>
+                                    <label class="custom-checkbox-label" for="found-variant-33">
+                                        <div class="custom-checkbox">
+                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
+                                                class="custom-checkbox-checkmark">
+                                        </div>
+                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                            class="custom-checkbox-label-image">
+                                        <span class="custom-checkbox-label-title body-md-b">
+                                            Variant 3
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="formula-settings-card-controls">
+                        <button class="search-btn-cancel btn btn-secondary" aria-controls="cancel-selected-products">
+                            Cancel
+                        </button>
+                        <button class="search-btn-save btn btn-primary" aria-controls="save-selected-products">
+                            Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

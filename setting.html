@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/reset.css">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <title>Setting</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="header-nav">
+                <ul class="header-nav-ul">
+                    <li class="header-nav-li">
+                        <a href="/index.html" class="header-nav-link body-lg">settings</a>
+                    </li>
+                    <li class="header-nav-li">
+                        <a href="#" class="header-nav-link body-lg">
+                            setting-name
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-controls">
+                <button class="btn-secondary btn" aria-controls="discard">
+                    Discard
+                </button>
+                <button class="btn-primary btn disabled" aria-controls="save">
+                    Save
+                </button>
+                <button class="btn-primary btn" aria-controls="create-formula">
+                    Create Formula
+                </button>
+            </div>
+        </header>
+        <div class="input-field setting-input-field">
+            <span class="input-label body-lg">
+                Title
+            </span>
+            <input type="text" class="input body-md" placeholder="setting-name">
+        </div>
+        <div class="empty-state">
+            <img src="./assets/icon-empty.svg" alt="empty-state" class="empty-state-img">
+            <p class="empty-state-text body-lg-b">
+                Oopsie, seems that you have no formulas yet
+            </p>
+            <p class="empty-state-underline body-sm">
+                Create your first formula!
+            </p>
+            <button class="btn btn-primary" aria-controls="create-formula">+</button>
+        </div>
+        <div class="formulas">
+            <h2 class="formulas-heading heading-lg">
+                Formulas
+            </h2>
+            <div class="formulas-list">
+                <div class="formula-line">
+                    <a href="/formula.html" class="formula-title">
+                        BTC increase each 2 sec for T-Shirts
+                    </a>
+                    <div class="formula-line-controls">
+                        <button class="formula-btn">
+                            <img src="./assets/icon-edit.svg" alt="" class="formula-edit-icon">
+                        </button>
+                        <button class="formula-btn">
+                            <img src="./assets/icon-remove.svg" alt="" class="formula-edit-icon">
+                        </button>
+                    </div>
+                </div>
+                <div class="formula-line">
+                    <a href="/formula.html" class="formula-title">
+                        BTC increase each 2 sec for T-Shirts
+                    </a>
+                    <div class="formula-line-controls">
+                        <button class="formula-btn">
+                            <img src="./assets/icon-edit.svg" alt="" class="formula-edit-icon">
+                        </button>
+                        <button class="formula-btn">
+                            <img src="./assets/icon-remove.svg" alt="" class="formula-edit-icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

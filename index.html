@@ -1,43 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-    <head>
-    <link rel="stylesheet" href="assets/reset.css">
-    <link rel="stylesheet" href="assets/styles.css">
-    
-     </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
 
-    <body>   
-       <div class="Website">
-          <strong> Settings </strong> 
-          <button class="settings">
-            <span class="small-spacing">All settings</span> Published BTC USDT TON
-        </button>
+    <link rel="stylesheet" href="./assets/reset.css">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <title>CoinSync</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="page-heading">Settings</h1>
+
+        <div class="tabs">
+            <div class="tab body-md active">All settings</div>
+            <div class="tab body-md">Published</div>
+            <div class="tab body-md">BTC</div>
+            <div class="tab body-md">USDT</div>
+            <div class="tab body-md">TON</div>
         </div>
-        
+
         <table class="table">
             <thead>
                 <tr>
-                    <th><button class="small-spacing"> Setting name </button></th>
-                    <th><button> Status </button></th>
+                    <th class="body-md cell column-setting-name">Setting name</th>
+                    <th class="body-md cell">Status</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="table1">
-                    <td><a href="https://content.com">Content</a></td>
-                    <td><button class="draft1"> Draft </button></td>
-                    <td><button class="image-button"><img src="icon\Delete.svg" alt="Basket"></button></td>
+                <tr>
+                    <td class="cell column-setting-name">
+                        <a href="/setting.html" class="body-md link" class="body-md link">BTC increase each 2 sec for T-Shirts</a>
+                    </td>
+                    <td class="status cell">
+                        <span class="status-badge body-md">
+                            Draft
+                        </span>
+                    </td>
+                    <td class="delete-icon-cell cell">
+                        <button class="delete-setting">
+                            <img class="delete-icon" src="./assets/Icon-remove.svg" alt="remove">
+                        </button>
+                    </td>
                 </tr>
-                <tr class="table2">
-                    <td><a href="https://content.com">Content</a></td>
-                    <td><button class="active"> Active </button></td>
-                    <td><button class="image-button"><img src="icon\Delete.svg" alt="Basket"></button></td>
+                <tr>
+                    <td class="cell column-setting-name">
+                        <a href="/setting.html" class="body-md link">USDT decrease each 1 sec for Hoodies</a>
+                    </td>
+                    <td class="status active cell">
+                        <span class="status-badge body-md active">
+                            Active
+                        </span>
+                    </td>
+                    <td class="delete-icon-cell cell">
+                        <button class="delete-setting">
+                            <img class="delete-icon" src="./assets/Icon-remove.svg" alt="remove">
+                        </button>
+                    </td>
                 </tr>
-                <tr class="table3">
-                    <td><a href="https://content.com">Content</a></td>
-                    <td><button class="draft2"> Draft </button></td>
-                    <td><button class="image-button"><img src="icon\Delete.svg" alt="Basket"></button></td>
+                <tr>
+                    <td class="cell column-setting-name">
+                        <a href="/setting.html" class="body-md link">TON based for merch each 1 min</a>
+                    </td>
+                    <td class="status active cell">
+                        <span class="status-badge body-md active">
+                            Active
+                        </span>
+                    </td>
+                    <td class="delete-icon-cell cell">
+                        <button class="delete-setting">
+                            <img class="delete-icon" src="./assets/Icon-remove.svg" alt="remove">
+                        </button>
+                    </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+</body>
+
+</html>
