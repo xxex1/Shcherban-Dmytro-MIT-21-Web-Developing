@@ -93,6 +93,47 @@ const selectors = {
   searchCurrencyResultInput: '.search-currency-result__radio-button_input',
   searchCurrencyResultLabel: '.search-currency-result__radio-button_label',
   searchCurrencyResultName: '.search-result-name',
+
+  // use collections object for shorten field names, like collections.selectAllInput instead of selectAllCollectionsInput
+  collections: {
+      selectAllInput: '#select-all-collections-input',
+      searchInput: '#search-collection-input',
+      selectedQuantity: '#selected-collections-quantity',
+
+      searchResultsContainer: '#search-collections-results-container',
+      searchResultTemplate: '#serach-collection-result-template',
+      selectAllWrapper: '#select-all-collections-wrapper',
+      selectAllCheckbox: '.custom-checkbox-input',
+      checkboxLabel: '.custom-checkbox-label',
+      selectInput: '.custom-checkbox-input',
+      title: '.custom-checkbox-label-title',
+
+      cancelButton: '[aria-controls="cancel-selected-collections"]',
+      saveButton: '[aria-controls="save-selected-collections"]'
+  },
+
+  products: {
+      searchInput: '#search-product-input',
+      selectedQuantity: '#selected-products-quantity',
+
+      selectAllWrapper: '#select-all-products-wrapper',
+      selectAllCheckbox: '#select-all-products',
+
+      searchResultsContainer: '#search-products-results-container',
+      searchResultTemplate: '#search-product-result-template',
+      productLine: '.search-result-product',
+      selectProductInput: '.custom-checkbox-input',
+      selectProductLabel: '.custom-checkbox-label',
+      productTitle: '.product-title',
+
+      variantLine: '.search-result-variant',
+      selectVariantLabel: '.custom-checkbox-label',
+      selectVariantInput: '.custom-checkbox-input',
+      variantTitle: '.variant-title',
+
+      cancelButton: '[aria-controls="cancel-selected-products"]',
+      saveButton: '[aria-controls="save-selected-products"]',
+  },
 }
 
 const saveButton = document.querySelector(selectors.saveButton);
@@ -105,6 +146,8 @@ const searchCurrencyResultsContainer = document.querySelector(selectors.searchCu
 const searchCurrencyInput = document.querySelector(selectors.searchCurrencyInput);
 const searchCurrencyResult = document.querySelector(selectors.searchCurrencyResult);
 const saveCurrencyChoiceButton = document.querySelector(selectors.saveCurrencyChoiceButton);
+const searchCollectionsResultsContainer = document.querySelector(selectors.collections.searchResultsContainer);
+const searchProductsResultsContainer = document.querySelector(selectors.products.searchResultsContainer);
 
 searchCurrencyInput.addEventListener('click', () => {
   searchCrypto.dataset.active = true;
@@ -132,8 +175,78 @@ function createCurrencySearchResult(currencyId) {
   searchCurrencyResultInput.id = currencyId;
   searchCurrencyResultLabel.htmlFor = currencyId;
   searchCurrencyResultName.innerText = currencyId;
-  console.log('✌️searchCurrencyResultCopy --->', searchCurrencyResultCopy);
   return searchCurrencyResultCopy;
+}
+
+/**
+* Creates the search result html element for the collection search.
+* 
+* @param {Object} collection - The collection object.
+* @returns {HTMLElement} - The search collection result html element.
+*/
+function createCollectionSearchResult(collection) {
+  const searchResultTemplate = document.querySelector(selectors.collections.searchResultTemplate);
+  const searchResultCopy = searchResultTemplate.cloneNode(true);
+  const selectInput = searchResultCopy.querySelector(selectors.collections.selectInput);
+  const checkboxLabel = searchResultCopy.querySelector(selectors.collections.checkboxLabel);
+  const title = searchResultCopy.querySelector(selectors.collections.title);
+  searchResultCopy.id = `search-result-${collection.id}`;
+  searchResultCopy.classList.remove('hidden');
+  selectInput.value = collection.id;
+  selectInput.id = collection.id;
+  checkboxLabel.htmlFor = collection.id;
+  title.innerText = collection.title;
+  return searchResultCopy;
+}
+
+/**
+* Creates the search result html element for the variant search.
+* 
+* @param {Object} variant - The variant object.
+* @returns {HTMLElement} - The search variant result html element.
+*/
+function createVariantSearchResult(variant) {
+  const variantLineTemplate = document.querySelector(selectors.products.variantLine);
+  const variantLine = variantLineTemplate.cloneNode(true);
+  const selectLabel = variantLine.querySelector(selectors.products.selectVariantLabel);
+  const selectInput = variantLine.querySelector(selectors.products.selectVariantInput);
+  const title = variantLine.querySelector(selectors.products.variantTitle);
+  variantLine.id = `search-variant-result-${variant.id}`;
+  variantLine.classList.remove('hidden');
+  selectInput.value = variant.id;
+  selectInput.id = `select-variant-${variant.id}`;
+  selectLabel.htmlFor = `select-variant-${variant.id}`;
+  title.innerText = variant.title;
+  return variantLine;
+}
+
+/**
+* Creates the search result html element for the product search.
+* 
+* @param {Object} product - The product object.
+* @returns {HTMLElement} - The search product result html element.
+*/
+function createProductSearchResult(product) {
+  const searchResultTemplate = document.querySelector(selectors.products.searchResultTemplate);
+  const searchResultCopy = searchResultTemplate.cloneNode(true);
+  const selectInput = searchResultCopy.querySelector(selectors.products.selectProductInput);
+  const checkboxLabel = searchResultCopy.querySelector(selectors.products.selectProductLabel);
+  const title = searchResultCopy.querySelector(selectors.products.productTitle);
+  searchResultCopy.id = `search-product-result-${product.id}`;
+  searchResultCopy.classList.remove('hidden');
+  selectInput.value = product.id;
+  selectInput.id = `select-product-${product.id}`;
+  checkboxLabel.htmlFor = `select-product-${product.id}`;
+  title.innerText = product.title;
+
+  if (product.variants?.length > 0) {
+      for (const variant of product.variants) {
+          const variantSearchResult = createVariantSearchResult(variant);
+          searchResultCopy.insertAdjacentElement('beforeend', variantSearchResult);
+      }
+  }
+  
+  return searchResultCopy;
 }
 
 function renderPage() {
@@ -145,6 +258,16 @@ function renderPage() {
       if (Object.prototype.hasOwnProperty.call(state.currencies, key)) {
           searchCurrencyResultsContainer.insertAdjacentElement('afterbegin', createCurrencySearchResult(key));
       }
+  }
+
+  for (const collection of state.collections) {
+      const collectionSearchResult = createCollectionSearchResult(collection);
+      searchCollectionsResultsContainer.insertAdjacentElement('afterbegin', collectionSearchResult);
+  }
+
+  for (const product of state.products) {
+      const productSearchResult = createProductSearchResult(product);
+      searchProductsResultsContainer.insertAdjacentElement('afterbegin', productSearchResult);
   }
 }
 
