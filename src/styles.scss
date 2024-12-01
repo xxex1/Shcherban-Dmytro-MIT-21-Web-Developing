@@ -1,0 +1,596 @@
+@import "./mixins.scss";
+
+:root {
+    --Color-text-text: #303030;
+    --Color-bg: #f1f1f1;
+    --Color-icon-icon-success: #29845a;
+    --Color-text-link-link: #0070f3;
+    --Height-table-row: 44px;
+    --Color-bg-fill-fill-success-secondary: #cdfee1;
+    --Color-text-text-success: #0c5132;
+    --Color-border-border: #e3e3e3;
+    --Color-text-secondary: #616161;
+    --Color-bg-fill-fill-disabled: #0000000d;
+    --Color-text-text-disabled: #b5b5b5;
+    --Color-input-border: #8a8a8a;
+}
+
+body {
+    background-color: var(--Color-bg);
+}
+
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+.page-heading {
+    font-family: "Inter", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+    text-align: left;
+    color: var(--Color-text-text);
+    margin-top: 40px;
+}
+
+.body-md {
+    @include body-md;
+}
+
+.body-md-b {
+    @include body-md;
+    font-weight: 650;
+}
+
+.body-lg {
+    @include body-lg;
+}
+
+.body-lg-m {
+    @include body-lg;
+    font-weight: 550;
+}
+
+.body-lg-b {
+    @include body-lg;
+    font-weight: 650;
+}
+
+.body-sm {
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 450;
+    line-height: 16px;
+    text-align: left;
+    font-variation-settings: "slnt" 0;
+}
+
+.heading-lg {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 650;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    text-align: left;
+    font-variation-settings: "slnt" 0;
+    color: var(--Color-text-text);
+}
+
+.link {
+    text-decoration: none;
+    color: var(--Color-text-link-link);
+}
+
+.btn {
+    padding: 6px 12px;
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 550;
+    line-height: 16px;
+    text-align: left;
+    font-variation-settings: "slnt" 0;
+    @include br-5;
+
+    &[aria-controls="create-formula"] {
+        @include br-10;
+    }
+}
+
+.btn.disabled {
+    background: var(--Color-bg-fill-fill-disabled);
+    color: var(--Color-text-text-disabled);
+}
+
+.btn-primary {
+    color: white;
+    background-color: var(--Color-text-text);
+}
+
+.btn-secondary {
+    color: var(--Color-text-text);
+    background-color: white;
+    box-shadow:
+        0px 1px 0px 0px #e3e3e3 inset,
+        1px 0px 0px 0px #e3e3e3 inset,
+        -1px 0px 0px 0px #e3e3e3 inset,
+        0px -1px 0px 0px #b5b5b5 inset;
+}
+
+.input-field {
+    background: var(--Color-input-bg-surface, #fdfdfd);
+    display: flex;
+    flex-direction: column;
+    @include br-10;
+}
+
+.setting-input-field.input-field {
+    padding: 12px;
+}
+
+.input-label {
+    margin-bottom: 12px;
+}
+
+.input {
+    background: var(--Color-input-bg-surface, #fdfdfd);
+    border: 0.66px solid var(--Color-input-border, #8a8a8a);
+    height: 32px;
+    padding-left: 12px;
+    @include br-10;
+}
+
+.custom-checkbox-input {
+    display: none;
+
+    &:checked + .custom-checkbox-label {
+        .custom-checkbox-checkmark {
+            opacity: 1;
+        }
+    }
+
+    &:checked + .custom-checkbox-label {
+        .custom-checkbox {
+            background-color: var(--Color-text-text);
+        }
+    }
+}
+
+.custom-checkbox-field {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox-label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox {
+    width: 16px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.66px solid var(--Color-input-border);
+    @include br-5;
+}
+
+.custom-checkbox-checkmark {
+    opacity: 0;
+}
+
+.custom-checkbox-label-image {
+    margin-left: 12px;
+    border: 1px solid var(--Color-border-border);
+    @include br-10;
+}
+
+.custom-checkbox-label-title {
+    margin-left: 12px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    height: 52px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    border-bottom: 1px solid var(--Color-border-border, #e3e3e3);
+    box-shadow:
+        0px 4px 6px -2px #1a1a1a33,
+        0px 1px 0px 0px #cccccc80 inset,
+        0px -1px 0px 0px #0000002b inset,
+        -1px 0px 0px 0px #00000021 inset,
+        1px 0px 0px 0px #00000021 inset;
+
+    @include br-5;
+}
+
+.tab {
+    padding: 16px 26px;
+}
+
+.tab.active {
+    border-bottom: 2px solid var(--Color-icon-icon-success);
+}
+
+.table {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    @include br-10;
+}
+
+thead {
+    height: var(--Height-table-row);
+}
+
+th,
+td {
+    border-bottom: 1px solid var(--Color-border-border);
+
+    &:first-child {
+        padding-left: 16px;
+    }
+
+    &:last-child {
+        padding-right: 16px;
+    }
+}
+
+tr {
+    height: var(--Height-table-row);
+}
+
+tr:last-child td {
+    border: none;
+}
+
+.column-setting-name {
+    width: 50%;
+}
+
+.delete-setting {
+    float: right;
+}
+
+.status-badge {
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 6px;
+    background: var(--Color-bg-fill-fill-transparent-secondary, #0000000f);
+    @include br-10;
+}
+
+.status-badge.active {
+    background: var(--Color-bg-fill-fill-success-secondary);
+    color: var(--Color-text-text-success);
+}
+
+.header {
+    margin-top: 36px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.header-nav-ul {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav-li {
+    &:last-child {
+        .header-nav-link {
+            color: var(--Color-text-text);
+        }
+    }
+
+    &:not(:first-child) {
+        margin-left: 12px;
+    }
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+    .btn:not(:first-child) {
+        margin-left: 8px;
+    }
+}
+
+.empty-state {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 36px;
+    padding-top: 67px;
+    padding-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    @include br-10;
+}
+
+.empty-state-img {
+    margin-bottom: 28px;
+}
+
+.empty-state-underline {
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+.formulas {
+    margin-top: 20px;
+    padding: 24px;
+    background-color: white;
+    @include br-10;
+}
+
+.formula-title-field {
+    padding: 12px;
+}
+
+.formulas-heading {
+    margin-bottom: 24px;
+}
+
+.formula-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.formula-line-controls {
+    display: flex;
+    align-items: center;
+}
+
+.formula-btn {
+    width: 60px;
+    height: 20px;
+    @include flex-center;
+}
+
+.formula-line:not(:first-child) {
+    margin-top: 24px;
+}
+
+.formula-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+.formula-main {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.formula-heading-icon {
+    @include flex-center;
+    margin-left: 16px;
+}
+
+.formula-heading-icon-arrow {
+    margin-left: auto;
+}
+
+.formula-column {
+    width: 49%;
+
+    .input-field:not(.input-field-search) {
+        margin-top: 14px;
+    }
+}
+
+.formula-settings-card {
+    width: 100%;
+    margin-top: 24px;
+    padding: 28px 22px;
+    background: white;
+    @include br-10;
+}
+
+.input-description {
+    margin-top: 4px;
+}
+
+.search-card {
+    margin-top: 14px;
+    padding: 12px;
+    border: 1px solid var(--Color-input-border, #8a8a8a);
+    @include br-10;
+}
+
+.search-card[aria-controls="search-collections"] {
+    border: none;
+}
+
+.search-input {
+    padding-left: 28px;
+    margin-top: 0;
+}
+
+.input-field-search {
+    position: relative;
+}
+
+.input-field-search-icon {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 9px;
+    left: 9px;
+}
+
+.search-input-description {
+    color: var(--Color-text-secondary);
+}
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-result {
+    display: flex;
+    align-items: center;
+}
+
+.search-result {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--Color-border-border);
+}
+
+.search-result:last-child {
+    border-bottom: none;
+}
+
+.search-result-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+    border: 1px solid var(--Color-border-border);
+    @include br-10;
+}
+
+.search-btn-save {
+    width: 100%;
+    text-align: center;
+}
+
+.selected-collections-input-field {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--Color-border-border);
+}
+
+.formula-settings-card-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .btn {
+        width: 49%;
+        text-align: center;
+    }
+}
+
+.search-result-product-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-result-variant {
+    padding-left: 36px;
+    margin: 5px 0;
+}
+
+// less than tablets
+@media (max-width: 768px) {
+    .table td {
+        width: 15%;
+        min-width: calc(16px + 12px); // 12px padding
+        &:first-child {
+            width: 80%;
+        }
+        &:last-child {
+            width: 5%;
+        }
+    }
+    th,
+    td {
+        &:first-child {
+            padding-left: 12px;
+        }
+
+        &:last-child {
+            padding-right: 12px;
+        }
+    }
+    .tabs {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .tab {
+        padding: 12px;
+    }
+
+    .formula-main {
+        flex-direction: column;
+    }
+
+    .formula-column {
+        width: 100%;
+    }
+
+    .formula-settings-card {
+        margin-top: 12px;
+    }
+
+    .formula-settings-card {
+        padding: 12px;
+    }
+}
+
+// intermediate between Mobile L (475px) and less than tablets
+@media (max-width: 500px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+    }
+
+    .header-controls {
+        width: 100%;
+        margin: 12px 0;
+    }
+
+    .empty-state {
+        margin-top: 12px;
+    }
+
+    .formulas {
+        margin-top: 12px;
+        padding: 12px;
+    }
+
+    .formula-btn {
+        width: 20px;
+
+        &:first-child {
+            margin-right: 8px;
+        }
+    }
+}
+
+
+// intermediate between Mobile L (475px) and less than tablets
+@media (max-width: 375px) {
+    .empty-state-text {
+        text-align: center;
+    }
+}
