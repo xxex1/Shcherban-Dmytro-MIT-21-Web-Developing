@@ -31,7 +31,15 @@
                 </ul>
             </nav>
             <div class="header-controls">
-                <button class="btn-secondary btn" aria-controls="discard">
+                <button class="btn-primary btn" aria-controls="toggle" data-status="draft">
+                    <span class="inner-text inner-text-activate">
+                        Activate
+                    </span>
+                    <span class="inner-text inner-text-disable">
+                        Disable
+                    </span>
+                </button>
+                <button class="btn-secondary btn disabled" aria-controls="discard">
                     Discard
                 </button>
                 <button class="btn-primary btn disabled" aria-controls="save">
@@ -46,7 +54,7 @@
             <span class="input-label body-lg">
                 Title
             </span>
-            <input type="text" class="input body-md" placeholder="setting-name">
+            <input type="text" id="title-input" class="input body-md" placeholder="setting-name">
         </div>
         <div class="empty-state">
             <img src="./assets/icon-empty.svg" alt="empty-state" class="empty-state-img">
@@ -63,35 +71,182 @@
                 Formulas
             </h2>
             <div class="formulas-list">
-                <div class="formula-line">
+                <div class="formula-line hidden" id="formula-line-template">
                     <a href="/formula.html" class="formula-title">
-                        BTC increase each 2 sec for T-Shirts
                     </a>
                     <div class="formula-line-controls">
-                        <button class="formula-btn">
-                            <img src="./assets/icon-edit.svg" alt="" class="formula-edit-icon">
+                        <button class="formula-btn" aria-controls="edit-formula">
+                            <img src="./assets/icon-edit.svg" alt="icon-edit" class="formula-edit-icon">
                         </button>
-                        <button class="formula-btn">
-                            <img src="./assets/icon-remove.svg" alt="" class="formula-edit-icon">
-                        </button>
-                    </div>
-                </div>
-                <div class="formula-line">
-                    <a href="/formula.html" class="formula-title">
-                        BTC increase each 2 sec for T-Shirts
-                    </a>
-                    <div class="formula-line-controls">
-                        <button class="formula-btn">
-                            <img src="./assets/icon-edit.svg" alt="" class="formula-edit-icon">
-                        </button>
-                        <button class="formula-btn">
-                            <img src="./assets/icon-remove.svg" alt="" class="formula-edit-icon">
+                        <button class="formula-btn" aria-controls="remove-formula">
+                            <img src="./assets/icon-remove.svg" alt="icon-remove" class="formula-edit-icon">
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script type="application/json" id="state">
+        {
+            "currencies": {
+                "BTC": {
+                    "title": "Bitcoin",
+                    "rate": 1
+                },
+                "USDT": {
+                    "title": "Tether",
+                    "rate": 12
+                },
+                "ETH": {
+                    "title": "Ethereum",
+                    "rate": 13
+                }
+            },
+            "settings": [
+                {
+                    "id": 1,
+                    "title": "BTC & USDT increase each 2 sec for T-Shirts",
+                    "status": "active",
+                    "formulas": [
+                        {
+                            "id": 1,
+                            "title": "BTC in used for T-Shirts",
+                            "formula": "X * Y",
+                            "frequency": 2000,
+                            "currency": "BTC",
+                            "targets": {
+                                "collectionsIds": [
+                                    1,
+                                    2
+                                ],
+                                "products": [
+                                    {
+                                        "id": 1,
+                                        "variantsIds": [
+                                            1,
+                                            2
+                                        ]
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": 2,
+                            "title": "USDT in used for hoodies",
+                            "formula": "X + Y",
+                            "frequency": 2000,
+                            "currency": "USDT",
+                            "targets": {
+                                "collectionsIds": [
+                                    3,
+                                    4
+                                ],
+                                "products": [
+                                    {
+                                        "id": 3,
+                                        "variants": [1,2,3]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "collections": [
+                {
+                    "id": 1,
+                    "title": "T-Shirts"
+                },
+                {
+                    "id": 2,
+                    "title": "Hoodies"
+                },
+                {
+                    "id": 3,
+                    "title": "Socks"
+                },
+                {
+                    "id": 4,
+                    "title": "Caps"
+                }
+            ],
+            "products": [
+                {
+                    "id": 1,
+                    "title": "Product 1",
+                    "price": 11,
+                    "variants": [
+                        {
+                            "id": 1,
+                            "title": "Black",
+                            "price": 11
+                        },
+                        {
+                            "id": 2,
+                            "title": "Red",
+                            "price": 12
+                        },
+                        {
+                            "id": 3,
+                            "title": "White",
+                            "price": 13
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "title": "Product 2",
+                    "price": 15,
+                    "variants": []
+                },
+                {
+                    "id": 3,
+                    "title": "Product 3",
+                    "price": 20.99,
+                    "variants": [
+                        {
+                            "id": 1,
+                            "title": "Black",
+                            "price": 29.99
+                        },
+                        {
+                            "id": 2,
+                            "title": "Red",
+                            "price": 20.99
+                        },
+                        {
+                            "id": 3,
+                            "title": "White",
+                            "price": 29.99
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "title": "Product 4",
+                    "price": 50,
+                    "variants": [
+                        {
+                            "id": 1,
+                            "title": "XXL",
+                            "price": 55.99
+                        },
+                        {
+                            "id": 2,
+                            "title": "XL",
+                            "price": 51.99
+                        },
+                        {
+                            "id": 3,
+                            "title": "L",
+                            "price": 50
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+    <script src="./src/scripts/setting.js"></script>
 </body>
 
 </html>

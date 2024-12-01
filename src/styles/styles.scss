@@ -13,6 +13,8 @@
     --Color-bg-fill-fill-disabled: #0000000d;
     --Color-text-text-disabled: #b5b5b5;
     --Color-input-border: #8a8a8a;
+    --Color-red-fill: #e51c00;
+    --Color-red-text: #8e1f0b;
 }
 
 body {
@@ -313,6 +315,27 @@ tr:last-child td {
     }
 }
 
+[aria-controls="toggle"] {
+    .inner-text-disable {
+        display: none;
+    }
+    .inner-text-activate {
+        display: block;
+    }
+
+    &[data-status="active"] {
+        background-color: var(--Color-red-fill);
+        color: var(--Color-red-text);
+
+        .inner-text-disable {
+            display: block;
+        }
+        .inner-text-activate {
+            display: none;
+        }
+    }
+}
+
 .empty-state {
     margin: 0 auto;
     width: 100%;
@@ -425,6 +448,15 @@ tr:last-child td {
     border: none;
 }
 
+.search-card[aria-controls="search-crypto"] {
+    height: 140px;
+    overflow: hidden;
+
+    &[data-active="true"] {
+        height: auto;
+    }
+}
+
 .search-input {
     padding-left: 28px;
     margin-top: 0;
@@ -459,6 +491,42 @@ tr:last-child td {
 .search-result {
     padding: 12px 0;
     border-bottom: 1px solid var(--Color-border-border);
+}
+
+.search-currency-result {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.search-currency-result__radio-button {
+    width: 100%;
+    height: 100%;
+    .search-currency-result__radio-button_label {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 12px 0;
+
+        .search-result-name {
+            height: 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        &:hover {
+            background-color: var(--Color-bg-surface-surface-brand-hover, #f1f1f1);
+        }
+
+        transition: 0.35s;
+        -webkit-transition: 0.35s;
+        -moz-transition: 0.35s;
+        -ms-transition: 0.35s;
+        -o-transition: 0.35s;
+    }
+    .search-currency-result__radio-button_input:checked + .search-currency-result__radio-button_label {
+        background-color: var(--Color-bg-surface-surface-brand-selected, #f1f1f1);
+    }
 }
 
 .search-result:last-child {
@@ -586,7 +654,6 @@ tr:last-child td {
         }
     }
 }
-
 
 // intermediate between Mobile L (475px) and less than tablets
 @media (max-width: 375px) {

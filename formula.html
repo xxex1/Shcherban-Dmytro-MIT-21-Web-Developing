@@ -48,7 +48,7 @@
             <span class="input-label body-lg">
                 Title
             </span>
-            <input type="text" class="input body-md" placeholder="formula-name">
+            <input type="text" class="input body-md formula-title-input" placeholder="formula-name">
         </div>
         <div class="formula-main">
             <div class="formula-settings formula-column">
@@ -65,7 +65,7 @@
                         <span class="input-label body-lg">
                             Formula
                         </span>
-                        <input type="text" class="input body-md" placeholder="X * Y">
+                        <input type="text" class="input body-md formula-input" placeholder="X * Y">
                         <p class="input-description body-md">
                             X - cryptocurrency price, Y - product price
                         </p>
@@ -74,47 +74,33 @@
                         <span class="input-label body-lg">
                             Frequency
                         </span>
-                        <input type="text" class="input body-md" placeholder="1000">
+                        <input type="text" class="input body-md frequency-input" placeholder="1000">
                         <p class="input-description body-md">
                             Cryptocurrency price update frequency. In milliseconds (like 1000ms == 1s)
                         </p>
                     </div>
-                    <div class="search-card" aria-controls="search-crypto">
+                    <div class="search-card" aria-controls="search-crypto" data-active="false">
                         <div class="input-field input-field-search">
                             <img class="input-field-search-icon" src="./assets/icon-search.svg" alt="search-icon">
-                            <input type="text" class="input body-md search-input" placeholder="Search">
+                            <input type="text" class="input body-md search-input" placeholder="Search" id="search-currency-input">
                             <p class="input-description search-input-description body-md">
                                 Select crypto from the list or search the one you need
                             </p>
                         </div>
                         <div class="search-results">
-                            <div class="search-result">
-                                <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
-                                    class="search-result-icon">
-                                <span class="search-result-name body-md-b">
-                                    Bitcoin
-                                </span>
-                            </div>
-                            <div class="search-result">
-                                <img src="./assets/image-placeholder.jpg" alt="eth" class="search-result-icon">
-                                <span class="search-result-name body-md-b">
-                                    Ethereum
-                                </span>
-                            </div>
-                            <div class="search-result">
-                                <img src="./assets/image-placeholder.jpg" alt="xrp" class="search-result-icon">
-                                <span class="search-result-name body-md-b">
-                                    Ripple
-                                </span>
-                            </div>
-                            <div class="search-result">
-                                <img src="./assets/image-placeholder.jpg" alt="ltc" class="search-result-icon">
-                                <span class="search-result-name body-md-b">
-                                    Litecoin
-                                </span>
+                            <div class="search-result search-currency-result hidden" id="search-currency-result-template">
+                                <div class="search-currency-result__radio-button">
+                                    <input type="radio" name="currency" id="currency-template" class="search-currency-result__radio-button_input hidden">
+                                    <label for="currency-template" class="search-currency-result__radio-button_label">
+                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
+                                            class="search-result-icon">
+                                        <span class="search-result-name body-md-b">
+                                        </span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                        <button class="search-btn-save btn btn-primary">
+                        <button class="search-btn-save btn btn-primary" type="button" id="save-currency-choice">
                             Save
                         </button>
                     </div>
@@ -371,6 +357,7 @@
             </div>
         </div>
     </div>
+    <script src="./src/scripts/formula.js"></script>
 </body>
 
 </html>

@@ -1,16 +1,21 @@
 {
-  "currencies": [
-      {
+  "currencies": {
+      "BTC": {
           "id": 1,
-          "title": "BTC",
-          "value": 0.0001
+          "title": "Bitcoin",
+          "rate": 1
       },
-      {
+      "USDT": {
           "id": 2,
-          "title": "USDT",
-          "value": 1
+          "title": "Tether",
+          "rate": 1
+      },
+      "ETH": {
+          "id": 3,
+          "title": "Ethereum",
+          "rate": 1
       }
-  ],
+  },
   "settings": [
       {
           "id": 1,
