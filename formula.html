@@ -82,15 +82,18 @@
                     <div class="search-card" aria-controls="search-crypto" data-active="false">
                         <div class="input-field input-field-search">
                             <img class="input-field-search-icon" src="./assets/icon-search.svg" alt="search-icon">
-                            <input type="text" class="input body-md search-input" placeholder="Search" id="search-currency-input">
+                            <input type="text" class="input body-md search-input" placeholder="Search"
+                                id="search-currency-input">
                             <p class="input-description search-input-description body-md">
                                 Select crypto from the list or search the one you need
                             </p>
                         </div>
                         <div class="search-results">
-                            <div class="search-result search-currency-result hidden" id="search-currency-result-template">
+                            <div class="search-result search-currency-result hidden"
+                                id="search-currency-result-template">
                                 <div class="search-currency-result__radio-button">
-                                    <input type="radio" name="currency" id="currency-template" class="search-currency-result__radio-button_input hidden">
+                                    <input type="radio" name="currency" id="currency-template"
+                                        class="search-currency-result__radio-button_input hidden">
                                     <label for="currency-template" class="search-currency-result__radio-button_label">
                                         <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
                                             class="search-result-icon">
@@ -119,24 +122,26 @@
                     <div class="search-card" aria-controls="search-collections">
                         <div class="input-field input-field-search">
                             <img class="input-field-search-icon" src="./assets/icon-search.svg" alt="search-icon">
-                            <input type="text" class="input body-md search-input" placeholder="Search">
+                            <input type="text" id="search-collection-input" class="input body-md search-input"
+                                placeholder="Search">
                         </div>
-                        <div class="selected-collections-input-field custom-checkbox-field">
-                            <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                id="selected-collections-input" checked>
-                            <label class="custom-checkbox-label" for="selected-collections-input">
+                        <div class="selected-collections-input-field custom-checkbox-field" id="select-all-collections-wrapper">
+                            <input class="custom-checkbox-input" type="checkbox"
+                                id="select-all-collections-input" checked>
+                            <label class="custom-checkbox-label" for="select-all-collections-input">
                                 <div class="custom-checkbox">
                                     <img src="./assets/icon-minus.svg" alt="minus-icon"
                                         class="custom-checkbox-checkmark">
                                 </div>
-                                <span class="custom-checkbox-label-title body-md-b">
+                                <span class="custom-checkbox-label-title body-md-b" id="selected-collections-quantity">
                                     2 selected
                                 </span>
                             </label>
                         </div>
-                        <div class="search-results">
-                            <div class="search-result custom-checkbox-field">
-                                <input class="custom-checkbox-input" type="checkbox" name="selected"
+                        <div class="search-results" id="search-collections-results-container">
+                            <div class="search-result custom-checkbox-field hidden"
+                                id="serach-collection-result-template">
+                                <input class="custom-checkbox-input" type="checkbox" name="selected-collection"
                                     id="found-collection-1" checked>
                                 <label class="custom-checkbox-label" for="found-collection-1">
                                     <div class="custom-checkbox">
@@ -146,37 +151,6 @@
                                     <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
                                         class="custom-checkbox-label-image">
                                     <span class="custom-checkbox-label-title body-md-b">
-                                        Collection 1
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="search-result custom-checkbox-field">
-                                <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                    id="found-collection-2">
-                                <label class="custom-checkbox-label" for="found-collection-2">
-                                    <div class="custom-checkbox">
-                                        <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
-                                            class="custom-checkbox-checkmark">
-                                    </div>
-                                    <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
-                                        class="custom-checkbox-label-image">
-                                    <span class="custom-checkbox-label-title body-md-b">
-                                        Collection 2
-                                    </span>
-                                </label>
-                            </div>
-                            <div class="search-result custom-checkbox-field">
-                                <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                    id="found-collection-3" checked>
-                                <label class="custom-checkbox-label" for="found-collection-3">
-                                    <div class="custom-checkbox">
-                                        <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
-                                            class="custom-checkbox-checkmark">
-                                    </div>
-                                    <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
-                                        class="custom-checkbox-label-image">
-                                    <span class="custom-checkbox-label-title body-md-b">
-                                        Collection 3
                                     </span>
                                 </label>
                             </div>
@@ -203,142 +177,48 @@
                     <div class="search-card" aria-controls="search-collections">
                         <div class="input-field input-field-search">
                             <img class="input-field-search-icon" src="./assets/icon-search.svg" alt="search-icon">
-                            <input type="text" class="input body-md search-input" placeholder="Search">
+                            <input type="text" class="input body-md search-input" placeholder="Search" id="search-product-input">
                         </div>
-                        <div class="selected-collections-input-field custom-checkbox-field hidden">
+                        <div class="selected-collections-input-field custom-checkbox-field" id="select-all-products-wrapper">
                             <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                id="selected-collections-input" checked>
-                            <label class="custom-checkbox-label" for="selected-collections-input">
+                                id="select-all-products" checked>
+                            <label class="custom-checkbox-label" for="select-all-products">
                                 <div class="custom-checkbox">
                                     <img src="./assets/icon-minus.svg" alt="minus-icon"
                                         class="custom-checkbox-checkmark">
                                 </div>
-                                <span class="custom-checkbox-label-title body-md-b">
+                                <span class="custom-checkbox-label-title body-md-b" id="selected-products-quantity">
                                     2 selected
                                 </span>
                             </label>
                         </div>
-                        <div class="search-results">
-                            <div class="search-result search-result-product-wrapper">
+                        <div class="search-results" id="search-products-results-container">
+                            <div class="search-result search-result-product-wrapper hidden" id="search-product-result-template">
                                 <div class="search-result-product custom-checkbox-field">
-                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                        id="found-product-1" checked>
-                                    <label class="custom-checkbox-label" for="found-product-1">
+                                    <input class="custom-checkbox-input" type="checkbox" name="selected-product"
+                                        id="" checked>
+                                    <label class="custom-checkbox-label" for="">
                                         <div class="custom-checkbox">
                                             <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
                                                 class="custom-checkbox-checkmark">
                                         </div>
                                         <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
                                             class="custom-checkbox-label-image">
-                                        <span class="custom-checkbox-label-title body-md-b">
-                                            Product 1
+                                        <span class="custom-checkbox-label-title body-md-b product-title">
                                         </span>
                                     </label>
                                 </div>
-                                <div class="search-result-variant custom-checkbox-field">
-                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                        id="found-variant-1" checked>
-                                    <label class="custom-checkbox-label" for="found-variant-1">
+                                <div class="search-result-variant custom-checkbox-field hidden">
+                                    <input class="custom-checkbox-input" type="checkbox" name="selected-variant"
+                                        id="" checked>
+                                    <label class="custom-checkbox-label" for="">
                                         <div class="custom-checkbox">
                                             <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
                                                 class="custom-checkbox-checkmark">
                                         </div>
                                         <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
                                             class="custom-checkbox-label-image">
-                                        <span class="custom-checkbox-label-title body-md-b">
-                                            Variant 1
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="search-result-variant custom-checkbox-field">
-                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                        id="found-variant-2" checked>
-                                    <label class="custom-checkbox-label" for="found-variant-2">
-                                        <div class="custom-checkbox">
-                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
-                                                class="custom-checkbox-checkmark">
-                                        </div>
-                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
-                                            class="custom-checkbox-label-image">
-                                        <span class="custom-checkbox-label-title body-md-b">
-                                            Variant 2
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="search-result-variant custom-checkbox-field">
-                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                        id="found-variant-3" checked>
-                                    <label class="custom-checkbox-label" for="found-variant-3">
-                                        <div class="custom-checkbox">
-                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
-                                                class="custom-checkbox-checkmark">
-                                        </div>
-                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
-                                            class="custom-checkbox-label-image">
-                                        <span class="custom-checkbox-label-title body-md-b">
-                                            Variant 3
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="search-result search-result-product-wrapper">
-                                <div class="search-result-product custom-checkbox-field">
-                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                        id="found-product-2" checked>
-                                    <label class="custom-checkbox-label" for="found-product-2">
-                                        <div class="custom-checkbox">
-                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
-                                                class="custom-checkbox-checkmark">
-                                        </div>
-                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
-                                            class="custom-checkbox-label-image">
-                                        <span class="custom-checkbox-label-title body-md-b">
-                                            Product 2
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="search-result-variant custom-checkbox-field">
-                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                        id="found-variant-11" checked>
-                                    <label class="custom-checkbox-label" for="found-variant-11">
-                                        <div class="custom-checkbox">
-                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
-                                                class="custom-checkbox-checkmark">
-                                        </div>
-                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
-                                            class="custom-checkbox-label-image">
-                                        <span class="custom-checkbox-label-title body-md-b">
-                                            Variant 1
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="search-result-variant custom-checkbox-field">
-                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                        id="found-variant-22" checked>
-                                    <label class="custom-checkbox-label" for="found-variant-22">
-                                        <div class="custom-checkbox">
-                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
-                                                class="custom-checkbox-checkmark">
-                                        </div>
-                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
-                                            class="custom-checkbox-label-image">
-                                        <span class="custom-checkbox-label-title body-md-b">
-                                            Variant 2
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="search-result-variant custom-checkbox-field">
-                                    <input class="custom-checkbox-input" type="checkbox" name="selected"
-                                        id="found-variant-33" checked>
-                                    <label class="custom-checkbox-label" for="found-variant-33">
-                                        <div class="custom-checkbox">
-                                            <img src="./assets/icon-checkmark.svg" alt="checkmark-icon"
-                                                class="custom-checkbox-checkmark">
-                                        </div>
-                                        <img src="./assets/image-placeholder.jpg" alt="image-placeholder"
-                                            class="custom-checkbox-label-image">
-                                        <span class="custom-checkbox-label-title body-md-b">
-                                            Variant 3
+                                        <span class="custom-checkbox-label-title body-md-b variant-title">
                                         </span>
                                     </label>
                                 </div>
