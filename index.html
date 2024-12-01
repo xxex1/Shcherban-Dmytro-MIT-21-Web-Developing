@@ -76,18 +76,20 @@
     </div>
     <script type="application/json" id="state">
         {
-            "currencies": [
-                {
-                    "id": 1,
-                    "title": "BTC",
-                    "value": 0.0001
+            "currencies": {
+                "BTC": {
+                    "title": "Bitcoin",
+                    "rate": 1
                 },
-                {
-                    "id": 2,
-                    "title": "USDT",
-                    "value": 1
+                "USDT": {
+                    "title": "Tether",
+                    "rate": 12
+                },
+                "ETH": {
+                    "title": "Ethereum",
+                    "rate": 13
                 }
-            ],
+            },
             "settings": [
                 {
                     "id": 1,
@@ -232,7 +234,7 @@
             ]
         }
     </script>
-    <script src="./src/scripts/settings-page.js"></script>
+    <script src="./src/scripts/index.js"></script>
 </body>
 
 </html>
