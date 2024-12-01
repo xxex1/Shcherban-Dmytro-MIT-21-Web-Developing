@@ -1,0 +1,40 @@
+@mixin body-lg {
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 450;
+  line-height: 20px;
+  text-align: left;
+  font-variation-settings: "slnt" 0;
+  color: var(--Color-text-text);
+}
+
+@mixin body-md {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 450;
+  line-height: 20px;
+  text-align: left;
+  color: var(--Color-text-text);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin br-10 {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+@mixin br-5 {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
